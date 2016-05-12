@@ -23,6 +23,12 @@
 		D3EFE64E1CE515D5001A928B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64B1CE515D5001A928B /* FBSDKCoreKit.framework */; };
 		D3EFE64F1CE515D5001A928B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64C1CE515D5001A928B /* FBSDKLoginKit.framework */; };
 		D3EFE6501CE515D5001A928B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64D1CE515D5001A928B /* FBSDKShareKit.framework */; };
+		D3EFE6521CE51910001A928B /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6511CE51910001A928B /* Firebase.framework */; };
+		D3EFE6541CE519CD001A928B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6531CE519CD001A928B /* libicucore.tbd */; };
+		D3EFE6561CE519FA001A928B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6551CE519FA001A928B /* libc++.tbd */; };
+		D3EFE6581CE51AED001A928B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6571CE51AED001A928B /* CFNetwork.framework */; };
+		D3EFE65A1CE51AFA001A928B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6591CE51AFA001A928B /* Security.framework */; };
+		D3EFE65C1CE51B15001A928B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE65B1CE51B15001A928B /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		D3EFE64B1CE515D5001A928B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D3EFE64C1CE515D5001A928B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D3EFE64D1CE515D5001A928B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		D3EFE6511CE51910001A928B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		D3EFE6531CE519CD001A928B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		D3EFE6551CE519FA001A928B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D3EFE6571CE51AED001A928B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D3EFE6591CE51AFA001A928B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D3EFE65B1CE51B15001A928B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +63,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EFE65C1CE51B15001A928B /* SystemConfiguration.framework in Frameworks */,
+				D3EFE65A1CE51AFA001A928B /* Security.framework in Frameworks */,
+				D3EFE6581CE51AED001A928B /* CFNetwork.framework in Frameworks */,
+				D3EFE6561CE519FA001A928B /* libc++.tbd in Frameworks */,
+				D3EFE6541CE519CD001A928B /* libicucore.tbd in Frameworks */,
 				D3EFE64F1CE515D5001A928B /* FBSDKLoginKit.framework in Frameworks */,
 				D3EFE64E1CE515D5001A928B /* FBSDKCoreKit.framework in Frameworks */,
 				D3EFE6501CE515D5001A928B /* FBSDKShareKit.framework in Frameworks */,
+				D3EFE6521CE51910001A928B /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +159,12 @@
 		D3EFE64A1CE5159C001A928B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFE6511CE51910001A928B /* Firebase.framework */,
+				D3EFE6531CE519CD001A928B /* libicucore.tbd */,
+				D3EFE6551CE519FA001A928B /* libc++.tbd */,
+				D3EFE6571CE51AED001A928B /* CFNetwork.framework */,
+				D3EFE6591CE51AFA001A928B /* Security.framework */,
+				D3EFE65B1CE51B15001A928B /* SystemConfiguration.framework */,
 				D3EFE64B1CE515D5001A928B /* FBSDKCoreKit.framework */,
 				D3EFE64C1CE515D5001A928B /* FBSDKLoginKit.framework */,
 				D3EFE64D1CE515D5001A928B /* FBSDKShareKit.framework */,
