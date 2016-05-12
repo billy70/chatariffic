@@ -20,6 +20,9 @@
 		D3EFE6451CE4DB5D001A928B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFE6441CE4DB5D001A928B /* Constants.swift */; };
 		D3EFE6471CE4E6F4001A928B /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFE6461CE4E6F4001A928B /* MaterialButton.swift */; };
 		D3EFE6491CE4ECC0001A928B /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFE6481CE4ECC0001A928B /* MaterialTextField.swift */; };
+		D3EFE64E1CE515D5001A928B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64B1CE515D5001A928B /* FBSDKCoreKit.framework */; };
+		D3EFE64F1CE515D5001A928B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64C1CE515D5001A928B /* FBSDKLoginKit.framework */; };
+		D3EFE6501CE515D5001A928B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64D1CE515D5001A928B /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		D3EFE6441CE4DB5D001A928B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D3EFE6461CE4E6F4001A928B /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		D3EFE6481CE4ECC0001A928B /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		D3EFE64B1CE515D5001A928B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		D3EFE64C1CE515D5001A928B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		D3EFE64D1CE515D5001A928B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EFE64F1CE515D5001A928B /* FBSDKLoginKit.framework in Frameworks */,
+				D3EFE64E1CE515D5001A928B /* FBSDKCoreKit.framework in Frameworks */,
+				D3EFE6501CE515D5001A928B /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,11 +79,12 @@
 		D3EFE6221CE4B549001A928B /* chatariffic */ = {
 			isa = PBXGroup;
 			children = (
-				D3EFE6431CE4DB46001A928B /* Utils */,
 				D3EFE6371CE4B8B5001A928B /* Model */,
 				D3EFE6361CE4B8AC001A928B /* View */,
 				D3EFE6351CE4B8A3001A928B /* Controller */,
+				D3EFE64A1CE5159C001A928B /* Frameworks */,
 				D3EFE6381CE4B8C4001A928B /* Resources */,
+				D3EFE6431CE4DB46001A928B /* Utils */,
 				D3EFE6231CE4B549001A928B /* AppDelegate.swift */,
 				D3EFE6251CE4B549001A928B /* ViewController.swift */,
 				D3EFE6271CE4B549001A928B /* Main.storyboard */,
@@ -126,6 +136,16 @@
 				D3EFE6441CE4DB5D001A928B /* Constants.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		D3EFE64A1CE5159C001A928B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFE64B1CE515D5001A928B /* FBSDKCoreKit.framework */,
+				D3EFE64C1CE515D5001A928B /* FBSDKLoginKit.framework */,
+				D3EFE64D1CE515D5001A928B /* FBSDKShareKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +344,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/chatariffic",
+				);
 				INFOPLIST_FILE = chatariffic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.wlmiii.chatariffic;
@@ -335,6 +359,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/chatariffic",
+				);
 				INFOPLIST_FILE = chatariffic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.wlmiii.chatariffic;
