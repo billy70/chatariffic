@@ -54,6 +54,10 @@
 		D3EFE6221CE4B549001A928B /* chatariffic */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFE6371CE4B8B5001A928B /* Model */,
+				D3EFE6361CE4B8AC001A928B /* View */,
+				D3EFE6351CE4B8A3001A928B /* Controller */,
+				D3EFE6381CE4B8C4001A928B /* Resources */,
 				D3EFE6231CE4B549001A928B /* AppDelegate.swift */,
 				D3EFE6251CE4B549001A928B /* ViewController.swift */,
 				D3EFE6271CE4B549001A928B /* Main.storyboard */,
@@ -62,6 +66,34 @@
 				D3EFE62F1CE4B549001A928B /* Info.plist */,
 			);
 			path = chatariffic;
+			sourceTree = "<group>";
+		};
+		D3EFE6351CE4B8A3001A928B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D3EFE6361CE4B8AC001A928B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D3EFE6371CE4B8B5001A928B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D3EFE6381CE4B8C4001A928B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
