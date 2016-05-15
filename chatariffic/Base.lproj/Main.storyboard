@@ -112,7 +112,7 @@
                                             <constraint firstAttribute="height" constant="35" id="DZX-DX-4y8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad1-cy-K19" customClass="MaterialButton" customModule="chatariffic" customModuleProvider="target">
                                         <rect key="frame" x="170" y="193" width="220" height="33"/>
@@ -125,6 +125,9 @@
                                         <state key="normal" title="Login / Signup Using Email">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="emailLoginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sY7-YU-mo1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,6 +160,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="Jls-iK-xNS" id="iXu-LK-93Q"/>
+                        <outlet property="passwordField" destination="jR4-TF-dv7" id="2O4-Ka-1OG"/>
                         <segue destination="Iap-4D-dqo" kind="show" identifier="showChat" id="DDx-G8-byf"/>
                     </connections>
                 </viewController>
