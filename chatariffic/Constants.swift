@@ -11,3 +11,4 @@ import UIKit
 
 let SHADOW_COLOR: CGFloat = 157.0 / 255.0
 let FIREBASE_KEY_UID = "uid"
+let SEGUE_ID_SHOW_CHAT = "showChat"

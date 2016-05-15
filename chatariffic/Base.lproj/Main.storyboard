@@ -156,10 +156,31 @@
                             <constraint firstItem="8Jg-Dm-qFZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="z5y-ru-6Fm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Iap-4D-dqo" kind="show" identifier="showChat" id="DDx-G8-byf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="657"/>
+            <point key="canvasLocation" x="280" y="687"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BAu-0H-fwe">
+            <objects>
+                <viewController id="Iap-4D-dqo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lbp-bV-wVg"/>
+                        <viewControllerLayoutGuide type="bottom" id="5dS-fi-bLq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NfI-qs-VwL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.47450980390000003" green="0.74901960779999999" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNr-Dg-wVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="687"/>
         </scene>
     </scenes>
     <resources>

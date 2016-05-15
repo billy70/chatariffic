@@ -18,6 +18,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if NSUserDefaults.standardUserDefaults().valueForKey(FIREBASE_KEY_UID) != nil {
+            self.performSegueWithIdentifier(SEGUE_ID_SHOW_CHAT, sender: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,6 +53,8 @@ class ViewController: UIViewController {
                         
                         // Save the Firebase user ID onto the user's device.
                         NSUserDefaults.standardUserDefaults().setValue(firebaseAuthData.uid, forKey: FIREBASE_KEY_UID)
+                        
+                        self.performSegueWithIdentifier(SEGUE_ID_SHOW_CHAT, sender: nil)
                     }
                 })
             }
