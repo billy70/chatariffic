@@ -63,6 +63,11 @@ class ViewController: UIViewController {
                     } else {
                         print("Firebase login via Facebook successful. Firebase auth data: \(firebaseAuthData)")
                         
+                        // Save the user to Firebase.
+                        // FIXME: Add error handling for the case that firebaseAuthData.provider == nil.
+                        let user = ["provider": firebaseAuthData.provider!, "blahblah": "test"]
+                        DataService.ds.createFirebaseUser(firebaseAuthData.uid, user: user)
+                        
                         // Save the Firebase user ID onto the user's device.
                         NSUserDefaults.standardUserDefaults().setValue(firebaseAuthData.uid, forKey: FIREBASE_KEY_UID)
                         
@@ -96,7 +101,14 @@ class ViewController: UIViewController {
                                     } else {
                                         NSUserDefaults.standardUserDefaults().setValue(result[FIREBASE_KEY_UID], forKey: FIREBASE_KEY_UID)
                                         
-                                        DataService.ds.REF_BASE.authUser(email, password: password, withCompletionBlock: nil)
+                                        DataService.ds.REF_BASE.authUser(email, password: password, withCompletionBlock: { (authError, authData) in
+
+                                            // Save the user to Firebase.
+                                            // FIXME: Add error handling for the case that firebaseAuthData.provider == nil.
+                                            let user = ["provider": authData.provider!, "blah2": "email test"]
+                                            DataService.ds.createFirebaseUser(authData.uid, user: user)
+                                        })
+                                        
                                         print("User logged in successfully.")
                                         self.performSegueWithIdentifier(SEGUE_ID_SHOW_CHAT, sender: nil)
                                     }
