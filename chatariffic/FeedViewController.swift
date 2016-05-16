@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,23 @@ class FeedViewController: UIViewController {
         
         DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: { snapshot in
             print("Firebase snapshot value for observeEventType(): \(snapshot.value)")
+            
+            self.posts = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                
+                for snapshot in snapshots {
+                    print("Snapshot: \(snapshot)")
+                    
+                    if let postDictionary = snapshot.value as? Dictionary<String, AnyObject> {
+                        
+                        let key = snapshot.key
+                        let post = Post(postKey: key, dictionary: postDictionary)
+                        self.posts.append(post)
+                    }
+                }
+            }
+            
             self.tableView.reloadData()
         })
     }
@@ -44,11 +64,14 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let post = posts[indexPath.row]
+        print(post.postDescription)
         return tableView.dequeueReusableCellWithIdentifier("postCell")!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
 }
 
