@@ -17,6 +17,11 @@ class FeedViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+        
+        DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: { snapshot in
+            print("Firebase snapshot value for observeEventType(): \(snapshot.value)")
+            self.tableView.reloadData()
+        })
     }
 
     override func didReceiveMemoryWarning() {
