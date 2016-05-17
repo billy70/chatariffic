@@ -14,12 +14,15 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [Post]()
+    static var imageCache = NSCache()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.estimatedRowHeight = 360
         
         DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: { snapshot in
             print("Firebase snapshot value for observeEventType(): \(snapshot.value)")
@@ -66,8 +69,22 @@ extension FeedViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.row]
-        print(post.postDescription)
-        return tableView.dequeueReusableCellWithIdentifier("postCell")!
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostCell {
+            
+            cell.request?.cancel()
+            
+            var image: UIImage?
+            
+            if let imageURL = post.imageURL {
+                image = FeedViewController.imageCache.objectForKey(imageURL) as? UIImage
+            }
+            
+            cell.configureCell(post, image: image)
+            return cell
+        } else {
+            return PostCell()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,6 +98,13 @@ extension FeedViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 300
+        let post = posts[indexPath.row]
+        
+        if post.imageURL == nil {
+            return 150
+            
+        } else {
+            return tableView.estimatedRowHeight
+        }
     }
 }
