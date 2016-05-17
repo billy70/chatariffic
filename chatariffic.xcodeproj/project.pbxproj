@@ -12,6 +12,7 @@
 		D3628BDE1CE8EC1400200137 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3628BDD1CE8EC1400200137 /* PostCell.swift */; };
 		D3628BE01CEA6DCE00200137 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3628BDF1CEA6DCE00200137 /* Post.swift */; };
 		D3628BE21CEA81BC00200137 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3628BE11CEA81BC00200137 /* Alamofire.framework */; };
+		D3628BE41CEB471200200137 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3628BE11CEA81BC00200137 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3EFE6241CE4B549001A928B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFE6231CE4B549001A928B /* AppDelegate.swift */; };
 		D3EFE6261CE4B549001A928B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFE6251CE4B549001A928B /* ViewController.swift */; };
 		D3EFE6291CE4B549001A928B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EFE6271CE4B549001A928B /* Main.storyboard */; };
@@ -35,6 +36,19 @@
 		D3EFE65A1CE51AFA001A928B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6591CE51AFA001A928B /* Security.framework */; };
 		D3EFE65C1CE51B15001A928B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE65B1CE51B15001A928B /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3628BE31CEB46FE00200137 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D3628BE41CEB471200200137 /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D3628BD91CE7A01500200137 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -206,6 +220,7 @@
 				D3EFE61C1CE4B549001A928B /* Sources */,
 				D3EFE61D1CE4B549001A928B /* Frameworks */,
 				D3EFE61E1CE4B549001A928B /* Resources */,
+				D3628BE31CEB46FE00200137 /* CopyFiles */,
 			);
 			buildRules = (
 			);
