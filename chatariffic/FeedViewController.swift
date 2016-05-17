@@ -12,8 +12,11 @@ import Firebase
 class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var newPostField: MaterialTextField!
+    @IBOutlet weak var imageSelectImage: UIImageView!
     
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
     static var imageCache = NSCache()
 
     override func viewDidLoad() {
@@ -23,6 +26,9 @@ class FeedViewController: UIViewController {
         tableView.delegate = self
         
         tableView.estimatedRowHeight = 360
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
         DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: { snapshot in
             print("Firebase snapshot value for observeEventType(): \(snapshot.value)")
@@ -63,6 +69,12 @@ class FeedViewController: UIViewController {
     }
     */
 
+    @IBAction func cameraImageTapped(sender: UITapGestureRecognizer) {
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func postButtonTapped(sender: MaterialButton) {
+    }
 }
 
 extension FeedViewController: UITableViewDataSource {
@@ -107,4 +119,15 @@ extension FeedViewController: UITableViewDelegate {
             return tableView.estimatedRowHeight
         }
     }
+}
+
+extension FeedViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        imageSelectImage.image = image
+    }
+}
+
+extension FeedViewController: UINavigationControllerDelegate {
+    
 }

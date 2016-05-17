@@ -199,12 +199,16 @@
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="g1D-Qp-Mly">
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="g1D-Qp-Mly">
                                                 <rect key="frame" x="446" y="0.0" width="38" height="38"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="38" id="e9h-lK-Q4J"/>
                                                     <constraint firstAttribute="height" constant="38" id="yoT-JJ-uE5"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="29A-Nn-DXI" appends="YES" id="fAw-qz-IGJ"/>
+                                                </connections>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8O-4s-PxN" customClass="MaterialButton" customModule="chatariffic" customModuleProvider="target">
                                                 <rect key="frame" x="494" y="0.0" width="50" height="38"/>
@@ -216,6 +220,9 @@
                                                 <state key="normal" title="POST">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="postButtonTapped:" destination="Iap-4D-dqo" eventType="touchUpInside" id="0XT-Hh-OUg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -241,13 +248,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtZ-53-15Q" userLabel="Container" customClass="MaterialView" customModule="chatariffic" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="10" width="540" height="402"/>
+                                                    <rect key="frame" x="8" y="10" width="544" height="402"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z8C-nw-cka">
-                                                            <rect key="frame" x="0.0" y="0.0" width="540" height="402"/>
+                                                            <rect key="frame" x="4" y="0.0" width="536" height="402"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="r7O-1A-sc3">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="540" height="50"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="r7O-1A-sc3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="536" height="50"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="pda-Od-E6v">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -257,41 +264,41 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNumber123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="IIn-Xf-210">
-                                                                            <rect key="frame" x="70" y="0.0" width="137" height="50"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="50" id="ZQS-aE-Lgi"/>
-                                                                            </constraints>
+                                                                            <rect key="frame" x="56" y="0.0" width="348" height="50"/>
                                                                             <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                             <color key="textColor" red="0.40784313725490196" green="0.69019607843137254" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="2ZO-aQ-YA0">
-                                                                            <rect key="frame" x="227" y="0.0" width="150" height="50"/>
+                                                                            <rect key="frame" x="410" y="0.0" width="50" height="50"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="50" id="ZS7-lq-i99"/>
+                                                                            </constraints>
                                                                         </imageView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-jL-fkE">
-                                                                            <rect key="frame" x="397" y="0.0" width="143" height="50"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-jL-fkE">
+                                                                            <rect key="frame" x="466" y="0.0" width="70" height="50"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="247" text="12,345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYG-hy-Ur7">
-                                                                                    <rect key="frame" x="63" y="0.0" width="80" height="25"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" constant="80" id="y57-LG-Hhs"/>
-                                                                                    </constraints>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="257" verticalHuggingPriority="247" text="12,345" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYG-hy-Ur7">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="260" verticalCompressionResistancePriority="751" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJi-Gy-srb">
-                                                                                    <rect key="frame" x="103" y="25" width="40" height="25"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="260" verticalCompressionResistancePriority="751" text="Likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJi-Gy-srb">
+                                                                                    <rect key="frame" x="0.0" y="25" width="70" height="25"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="70" id="fpj-1I-Udc"/>
+                                                                            </constraints>
                                                                         </stackView>
                                                                     </subviews>
                                                                 </stackView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xsA-ES-enk">
-                                                                    <rect key="frame" x="0.0" y="58" width="540" height="70"/>
+                                                                    <rect key="frame" x="0.0" y="58" width="536" height="70"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="aWM-O9-5xu"/>
@@ -302,7 +309,7 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen_shot" translatesAutoresizingMaskIntoConstraints="NO" id="Ych-b7-KAU">
-                                                                    <rect key="frame" x="0.0" y="136" width="540" height="266"/>
+                                                                    <rect key="frame" x="0.0" y="136" width="536" height="266"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -317,16 +324,16 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="z8C-nw-cka" secondAttribute="trailing" id="O2y-Cl-dui"/>
+                                                        <constraint firstAttribute="trailing" secondItem="z8C-nw-cka" secondAttribute="trailing" constant="4" id="O2y-Cl-dui"/>
                                                         <constraint firstAttribute="bottom" secondItem="z8C-nw-cka" secondAttribute="bottom" id="vdW-4S-bQ8"/>
                                                         <constraint firstItem="z8C-nw-cka" firstAttribute="top" secondItem="CtZ-53-15Q" secondAttribute="top" id="wPi-Uy-wAn"/>
-                                                        <constraint firstItem="z8C-nw-cka" firstAttribute="leading" secondItem="CtZ-53-15Q" secondAttribute="leading" id="yOA-fG-bux"/>
+                                                        <constraint firstItem="z8C-nw-cka" firstAttribute="leading" secondItem="CtZ-53-15Q" secondAttribute="leading" constant="4" id="yOA-fG-bux"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="CtZ-53-15Q" secondAttribute="trailing" constant="10" id="dgL-Ca-MwE"/>
-                                                <constraint firstItem="CtZ-53-15Q" firstAttribute="leading" secondItem="SvM-d5-BoT" secondAttribute="leading" constant="10" id="rWL-F8-YEx"/>
+                                                <constraint firstAttribute="trailing" secondItem="CtZ-53-15Q" secondAttribute="trailing" constant="8" id="KuM-L1-Zpe"/>
+                                                <constraint firstItem="CtZ-53-15Q" firstAttribute="leading" secondItem="SvM-d5-BoT" secondAttribute="leading" constant="8" id="ozp-Rs-z1r"/>
                                                 <constraint firstItem="CtZ-53-15Q" firstAttribute="top" secondItem="SvM-d5-BoT" secondAttribute="top" constant="10" id="yJo-Vm-bAa"/>
                                                 <constraint firstAttribute="bottom" secondItem="CtZ-53-15Q" secondAttribute="bottom" constant="10" id="yhK-b0-1vA"/>
                                             </constraints>
@@ -354,10 +361,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="fZ8-K6-KoA"/>
                     <connections>
+                        <outlet property="imageSelectImage" destination="g1D-Qp-Mly" id="iwW-Gx-tca"/>
+                        <outlet property="newPostField" destination="Yip-4Z-0Jd" id="Iou-Vr-BuA"/>
                         <outlet property="tableView" destination="srQ-Bh-f2i" id="TlM-Pd-3EO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNr-Dg-wVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="29A-Nn-DXI">
+                    <connections>
+                        <action selector="cameraImageTapped:" destination="Iap-4D-dqo" id="Usl-DA-WgG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1849" y="687"/>
         </scene>
