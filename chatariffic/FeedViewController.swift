@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 class FeedViewController: UIViewController {
     
@@ -74,6 +75,49 @@ class FeedViewController: UIViewController {
     }
     
     @IBAction func postButtonTapped(sender: MaterialButton) {
+        
+        if let postText = newPostField.text where postText != "" {
+            if let postImage = imageSelectImage.image {
+                print("Attempting to upload image...")
+                
+                let urlString = "https://post.imageshack.us/upload_api.php"
+                let url = NSURL(string: urlString)!
+                let imageData = UIImageJPEGRepresentation(postImage, 0.2)!
+                let keyData = "12DJKPSU5fc3afbd01b1630cc718cae3043220f3".dataUsingEncoding(NSUTF8StringEncoding)!
+                let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+                
+                // Use Alamofire to build up the POST request to ImageShack which comforms
+                // to the format expected by their API endpoint.
+                Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
+                    
+                    print("Assembling the multipart form data...")
+                    
+                    multipartFormData.appendBodyPart(data: keyData, name: "key")
+                    multipartFormData.appendBodyPart(data: imageData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
+                    multipartFormData.appendBodyPart(data: keyJSON, name: "format")
+                    
+                    }, encodingCompletion: { encodingResult in
+                        
+                        print("Multipart form data completion handler called...")
+                        
+                        switch encodingResult {
+                            case .Success(let upload, _, _):
+                                upload.responseJSON(completionHandler: { response in
+                                    if let info = response.result.value as? Dictionary<String, AnyObject> {
+                                        
+                                        if let links = info["links"] as? Dictionary<String, AnyObject> {
+                                            if let imageLink = links["image_link"] as? String {
+                                                print("Image link: \(imageLink)")
+                                            }
+                                        }
+                                    }
+                                })
+                            case .Failure(let error):
+                                print("Error uploading to ImageShack: \(error)")
+                        }
+                })
+            }
+        }
     }
 }
 
