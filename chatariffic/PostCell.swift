@@ -62,6 +62,8 @@ class PostCell: UITableViewCell {
                         let responseImage = UIImage(data: data!)!
                         self.showcaseImage.image = responseImage
                         FeedViewController.imageCache.setObject(responseImage, forKey: self.post.imageURL!)
+                    } else {
+                        print("Error getting image from URL \(post.imageURL)")
                     }
                 })
                 
