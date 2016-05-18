@@ -19,6 +19,7 @@ class FeedViewController: UIViewController {
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache = NSCache()
+    var imageSelected = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,7 @@ class FeedViewController: UIViewController {
     @IBAction func postButtonTapped(sender: MaterialButton) {
         
         if let postText = newPostField.text where postText != "" {
-            if let postImage = imageSelectImage.image {
+            if let postImage = imageSelectImage.image where imageSelected == true {
                 print("Attempting to upload image...")
                 
                 let urlString = "https://post.imageshack.us/upload_api.php"
@@ -108,6 +109,7 @@ class FeedViewController: UIViewController {
                                         if let links = info["links"] as? Dictionary<String, AnyObject> {
                                             if let imageLink = links["image_link"] as? String {
                                                 print("Image link: \(imageLink)")
+                                                self.postToFirebase(imageLink)
                                             }
                                         }
                                     }
@@ -116,8 +118,30 @@ class FeedViewController: UIViewController {
                                 print("Error uploading to ImageShack: \(error)")
                         }
                 })
+            } else {
+                self.postToFirebase(nil)
             }
         }
+    }
+    
+    func postToFirebase(imageURL: String?) {
+        var post: Dictionary<String, AnyObject> = [
+            "description": newPostField.text!,
+            "likes": 0
+        ]
+        
+        if imageURL != nil {
+            post["imageURL"] = imageURL!
+        }
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        newPostField.text = ""
+        imageSelectImage.image = UIImage(named: "camera")
+        imageSelected = false
+        
+        tableView.reloadData()
     }
 }
 
@@ -169,6 +193,7 @@ extension FeedViewController: UIImagePickerControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         imageSelectImage.image = image
+        imageSelected = true
     }
 }
 
