@@ -35,6 +35,7 @@
 		D3EFE6581CE51AED001A928B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6571CE51AED001A928B /* CFNetwork.framework */; };
 		D3EFE65A1CE51AFA001A928B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6591CE51AFA001A928B /* Security.framework */; };
 		D3EFE65C1CE51B15001A928B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE65B1CE51B15001A928B /* SystemConfiguration.framework */; };
+		D3F789AF1D076D1F004A5300 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F789AE1D076D1F004A5300 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +81,7 @@
 		D3EFE6571CE51AED001A928B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D3EFE6591CE51AFA001A928B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D3EFE65B1CE51B15001A928B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D3F789AE1D076D1F004A5300 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				D3EFE62A1CE4B549001A928B /* Assets.xcassets */,
 				D3EFE62C1CE4B549001A928B /* LaunchScreen.storyboard */,
 				D3EFE62F1CE4B549001A928B /* Info.plist */,
+				D3F789AE1D076D1F004A5300 /* GoogleService-Info.plist */,
 			);
 			path = chatariffic;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3EFE63D1CE4BBA3001A928B /* NotoSans-Bold.ttf in Resources */,
+				D3F789AF1D076D1F004A5300 /* GoogleService-Info.plist in Resources */,
 				D3EFE62E1CE4B549001A928B /* LaunchScreen.storyboard in Resources */,
 				D3EFE63E1CE4BBA3001A928B /* NotoSans-BoldItalic.ttf in Resources */,
 				D3EFE63F1CE4BBA3001A928B /* NotoSans-Italic.ttf in Resources */,
