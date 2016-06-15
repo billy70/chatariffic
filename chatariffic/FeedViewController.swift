@@ -37,7 +37,7 @@ class FeedViewController: UIViewController {
             
             self.posts = []
             
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
                 for snapshot in snapshots {
                     print("Snapshot: \(snapshot)")

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D338C7E31D0897FC00CD7901 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D338C7E21D0897FC00CD7901 /* FirebaseAnalytics.framework */; };
+		D338C7E51D08980C00CD7901 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D338C7E41D08980C00CD7901 /* FirebaseInstanceID.framework */; };
+		D338C7E71D08981800CD7901 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D338C7E61D08981800CD7901 /* GoogleInterchangeUtilities.framework */; };
+		D338C7E91D08982900CD7901 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D338C7E81D08982900CD7901 /* GoogleSymbolUtilities.framework */; };
+		D338C7EB1D08983600CD7901 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D338C7EA1D08983600CD7901 /* GoogleUtilities.framework */; };
+		D338C7EE1D08988C00CD7901 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D338C7ED1D08988C00CD7901 /* FirebaseAuth.framework */; };
+		D338C7F01D0898A000CD7901 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D338C7EF1D0898A000CD7901 /* GoogleNetworkingUtilities.framework */; };
+		D338C7F21D0898B700CD7901 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D338C7F11D0898B700CD7901 /* FirebaseDatabase.framework */; };
 		D3628BDA1CE7A01500200137 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3628BD91CE7A01500200137 /* DataService.swift */; };
 		D3628BDC1CE8EA9B00200137 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3628BDB1CE8EA9B00200137 /* FeedViewController.swift */; };
 		D3628BDE1CE8EC1400200137 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3628BDD1CE8EC1400200137 /* PostCell.swift */; };
@@ -29,7 +37,6 @@
 		D3EFE64E1CE515D5001A928B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64B1CE515D5001A928B /* FBSDKCoreKit.framework */; };
 		D3EFE64F1CE515D5001A928B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64C1CE515D5001A928B /* FBSDKLoginKit.framework */; };
 		D3EFE6501CE515D5001A928B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE64D1CE515D5001A928B /* FBSDKShareKit.framework */; };
-		D3EFE6521CE51910001A928B /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6511CE51910001A928B /* Firebase.framework */; };
 		D3EFE6541CE519CD001A928B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6531CE519CD001A928B /* libicucore.tbd */; };
 		D3EFE6561CE519FA001A928B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6551CE519FA001A928B /* libc++.tbd */; };
 		D3EFE6581CE51AED001A928B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EFE6571CE51AED001A928B /* CFNetwork.framework */; };
@@ -52,6 +59,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D338C7E21D0897FC00CD7901 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		D338C7E41D08980C00CD7901 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		D338C7E61D08981800CD7901 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		D338C7E81D08982900CD7901 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		D338C7EA1D08983600CD7901 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		D338C7ED1D08988C00CD7901 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
+		D338C7EF1D0898A000CD7901 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		D338C7F11D0898B700CD7901 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
+		D338C7F31D0899C000CD7901 /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		D338C7F41D0899DC00CD7901 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		D3628BD91CE7A01500200137 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D3628BDB1CE8EA9B00200137 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		D3628BDD1CE8EC1400200137 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -75,7 +92,6 @@
 		D3EFE64B1CE515D5001A928B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D3EFE64C1CE515D5001A928B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D3EFE64D1CE515D5001A928B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		D3EFE6511CE51910001A928B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		D3EFE6531CE519CD001A928B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		D3EFE6551CE519FA001A928B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3EFE6571CE51AED001A928B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -89,22 +105,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D338C7F21D0898B700CD7901 /* FirebaseDatabase.framework in Frameworks */,
+				D338C7F01D0898A000CD7901 /* GoogleNetworkingUtilities.framework in Frameworks */,
 				D3EFE65C1CE51B15001A928B /* SystemConfiguration.framework in Frameworks */,
 				D3EFE65A1CE51AFA001A928B /* Security.framework in Frameworks */,
 				D3EFE6581CE51AED001A928B /* CFNetwork.framework in Frameworks */,
 				D3628BE21CEA81BC00200137 /* Alamofire.framework in Frameworks */,
+				D338C7E91D08982900CD7901 /* GoogleSymbolUtilities.framework in Frameworks */,
+				D338C7E51D08980C00CD7901 /* FirebaseInstanceID.framework in Frameworks */,
+				D338C7EB1D08983600CD7901 /* GoogleUtilities.framework in Frameworks */,
+				D338C7E31D0897FC00CD7901 /* FirebaseAnalytics.framework in Frameworks */,
 				D3EFE6561CE519FA001A928B /* libc++.tbd in Frameworks */,
 				D3EFE6541CE519CD001A928B /* libicucore.tbd in Frameworks */,
 				D3EFE64F1CE515D5001A928B /* FBSDKLoginKit.framework in Frameworks */,
+				D338C7E71D08981800CD7901 /* GoogleInterchangeUtilities.framework in Frameworks */,
+				D338C7EE1D08988C00CD7901 /* FirebaseAuth.framework in Frameworks */,
 				D3EFE64E1CE515D5001A928B /* FBSDKCoreKit.framework in Frameworks */,
 				D3EFE6501CE515D5001A928B /* FBSDKShareKit.framework in Frameworks */,
-				D3EFE6521CE51910001A928B /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D338C7EC1D08983E00CD7901 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				D338C7ED1D08988C00CD7901 /* FirebaseAuth.framework */,
+				D338C7E21D0897FC00CD7901 /* FirebaseAnalytics.framework */,
+				D338C7F11D0898B700CD7901 /* FirebaseDatabase.framework */,
+				D338C7E41D08980C00CD7901 /* FirebaseInstanceID.framework */,
+				D338C7E61D08981800CD7901 /* GoogleInterchangeUtilities.framework */,
+				D338C7E81D08982900CD7901 /* GoogleSymbolUtilities.framework */,
+				D338C7EA1D08983600CD7901 /* GoogleUtilities.framework */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
 		D3628BD81CE79FE000200137 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +177,8 @@
 				D3628BD81CE79FE000200137 /* Services */,
 				D3EFE6431CE4DB46001A928B /* Utils */,
 				D3EFE6231CE4B549001A928B /* AppDelegate.swift */,
+				D338C7F31D0899C000CD7901 /* Firebase.h */,
+				D338C7F41D0899DC00CD7901 /* module.modulemap */,
 				D3EFE6271CE4B549001A928B /* Main.storyboard */,
 				D3EFE62A1CE4B549001A928B /* Assets.xcassets */,
 				D3EFE62C1CE4B549001A928B /* LaunchScreen.storyboard */,
@@ -199,8 +238,9 @@
 		D3EFE64A1CE5159C001A928B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D338C7EC1D08983E00CD7901 /* Firebase */,
+				D338C7EF1D0898A000CD7901 /* GoogleNetworkingUtilities.framework */,
 				D3628BE11CEA81BC00200137 /* Alamofire.framework */,
-				D3EFE6511CE51910001A928B /* Firebase.framework */,
 				D3EFE6531CE519CD001A928B /* libicucore.tbd */,
 				D3EFE6551CE519FA001A928B /* libc++.tbd */,
 				D3EFE6571CE51AED001A928B /* CFNetwork.framework */,
@@ -421,8 +461,10 @@
 				);
 				INFOPLIST_FILE = chatariffic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = net.wlmiii.chatariffic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /Users/wlmiii/projects/ios9_and_swift/chatariffic;
 			};
 			name = Debug;
 		};
@@ -436,8 +478,10 @@
 				);
 				INFOPLIST_FILE = chatariffic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = net.wlmiii.chatariffic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /Users/wlmiii/projects/ios9_and_swift/chatariffic;
 			};
 			name = Release;
 		};

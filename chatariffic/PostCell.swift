@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import Firebase
+import FirebaseDatabase
 
 class PostCell: UITableViewCell {
 
@@ -20,7 +20,7 @@ class PostCell: UITableViewCell {
     
     var post: Post!
     var request: Request?   // Alamofire Request type
-    var likeRef: Firebase!
+    var likeRef: FIRDatabaseReference!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,7 +48,7 @@ class PostCell: UITableViewCell {
     func configureCell(post: Post, image: UIImage?) {
         self.post = post
         
-        likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
+        likeRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
         
         if let postDescription = post.postDescription where post.postDescription != "" {
             self.descriptionText.text = postDescription

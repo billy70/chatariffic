@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 import FBSDKCoreKit
 import FBSDKLoginKit
 
@@ -56,20 +56,22 @@ class ViewController: UIViewController {
                 let facebookAccessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 print("Successfully logged in with Facebook. Token: \(facebookAccessToken)")
                 
-                DataService.ds.REF_BASE.authWithOAuthProvider("facebook", token: facebookAccessToken, withCompletionBlock: { error, firebaseAuthData in
-                    
+                let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
+                
+                FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
+                
                     if error != nil {
                         print("Firebase login via Facebook failed! Error: \(error)")
                     } else {
-                        print("Firebase login via Facebook successful. Firebase auth data: \(firebaseAuthData)")
+                        print("Firebase login via Facebook successful. Firebase auth data: \(user)")
                         
                         // Save the user to Firebase.
                         // FIXME: Add error handling for the case that firebaseAuthData.provider == nil.
-                        let user = ["provider": firebaseAuthData.provider!, "blahblah": "test"]
-                        DataService.ds.createFirebaseUser(firebaseAuthData.uid, user: user)
+                        let userData = ["provider": credential.provider, "blahblah": "test"]
+                        DataService.ds.createFirebaseUser(user!.uid, user: userData)
                         
                         // Save the Firebase user ID onto the user's device.
-                        NSUserDefaults.standardUserDefaults().setValue(firebaseAuthData.uid, forKey: FIREBASE_KEY_UID)
+                        NSUserDefaults.standardUserDefaults().setValue(user!.uid, forKey: FIREBASE_KEY_UID)
                         
                         self.performSegueWithIdentifier(SEGUE_ID_SHOW_CHAT, sender: nil)
                     }
@@ -82,59 +84,56 @@ class ViewController: UIViewController {
         
         if let email = emailField.text where email != "", let password = passwordField.text where password != "" {
             
-            DataService.ds.REF_BASE.authUser(email, password: password) {
-                error, firebaseAuthData in
+            FIRAuth.auth()?.signInWithEmail(email, password: password, completion: {
+                (user, error) in
                 
                 if error != nil {
                     
-                    print("Firebase authentication failure. Error code: \(error.code)")
+                    print("Firebase authentication failure. Error code: \(error!.code)")
                     print("   Error: \(error)")
 
-                    if let errorCode = FAuthenticationError(rawValue: error.code) {
+                    if let errorCode = FIRAuthErrorCode(rawValue: error!.code) {
                         switch (errorCode) {
-                            case .UserDoesNotExist:
+                            case .ErrorCodeUserNotFound:
                                 print("Handle invalid user")
                             
-                                DataService.ds.REF_BASE.createUser(email, password: password, withValueCompletionBlock: { (error, result) in
+                                FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
+                                    
                                     if error != nil {
                                         self.showErrorAlert("Could not create account", message: "Problem creating account. Please try again.")
                                     } else {
-                                        NSUserDefaults.standardUserDefaults().setValue(result[FIREBASE_KEY_UID], forKey: FIREBASE_KEY_UID)
-                                        
-                                        DataService.ds.REF_BASE.authUser(email, password: password, withCompletionBlock: { (authError, authData) in
+                                        NSUserDefaults.standardUserDefaults().setValue(user!.uid, forKey: FIREBASE_KEY_UID)
 
-                                            // Save the user to Firebase.
-                                            // FIXME: Add error handling for the case that firebaseAuthData.provider == nil.
-                                            let user = ["provider": authData.provider!, "blah2": "email test"]
-                                            DataService.ds.createFirebaseUser(authData.uid, user: user)
-                                        })
+                                        // Save the user to Firebase.
+                                        // FIXME: Add error handling for the case that firebaseAuthData.provider == nil.
+                                        let userData = ["provider": "email"]
+                                        DataService.ds.createFirebaseUser(user!.uid, user: userData)
                                         
                                         print("User logged in successfully.")
                                         self.performSegueWithIdentifier(SEGUE_ID_SHOW_CHAT, sender: nil)
                                     }
                                 })
-                            case .EmailTaken:
+                            case .ErrorCodeEmailAlreadyInUse:
                                 print("Handle email already taken")
                                 self.showErrorAlert("Email address already taken", message: "The email address \(email) is already taken. Please use a different email address.")
-                            case .InvalidEmail:
+                            case .ErrorCodeInvalidEmail:
                                 print("Handle invalid email")
                                 self.showErrorAlert("Email address is invalid", message: "The email address \(email) is invalid. Please use a valid email address.")
-                            case .InvalidPassword:
+                            case .ErrorCodeWrongPassword:
                                 print("Handle invalid password")
                                 self.showErrorAlert("Password invalid", message: "The password is invalid. Please use the correct password.")
                             default:
                                 print("Handle default situation")
                                 self.showErrorAlert("An unknown error occurred.", message: "Please try again with different credentials, or try again later.")
                         }
-                    }
-                    
+                    }  // END if let errorCode = FIRAuthErrorCode(rawValue: error.code) {
                 } else {
                     // User is logged into Firebase.
                     print("User sucessfully logged into Firebase with email/password.")
                     self.performSegueWithIdentifier(SEGUE_ID_SHOW_CHAT, sender: nil)
                     
                 }
-            }
+            })
         } else {
             showErrorAlert("Email and password required", message: "You must enter an email and password to signup.")
         }
